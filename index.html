@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>توقع الفائز في مباراة كرة القدم</title>
+<script>
+    function predictWinner() {
+        var team1 = document.getElementById("team1").value;
+        var team2 = document.getElementById("team2").value;
+        
+        // جعل طلب إلى الخادم لتوليد توقع عشوائي
+        // في هذا المثال، سنستخدم توقعات محددة للتوضيح
+        var results = ["فوز " + team1, "فوز " + team2, "تعادل"];
+        var prediction = results[Math.floor(Math.random() * results.length)];
+        
+        document.getElementById("prediction").innerHTML = "التوقع للمباراة بين " + team1 + " و " + team2 + " : " + prediction;
+    }
+</script>
+</head>
+<body>
+
+<h2>توقع الفائز في مباراة كرة القدم</h2>
+
+<label for="team1">اسم الفريق الأول:</label>
+<input type="text" id="team1" name="team1"><br><br>
+
+<label for="team2">اسم الفريق الثاني:</label>
+<input type="text" id="team2" name="team2"><br><br>
+
+<button onclick="predictWinner()">توقع الفائز</button>
+
+<p id="prediction"></p>
+
+</body>
+</html>
